@@ -488,6 +488,7 @@ class ImportFromSeed extends PureComponent {
 								{strings('import_from_seed.new_password')}
 							</Animated.Text>
 							<TextInput
+								testID={'input-password-field'}
 								ref={this.passwordInput}
 								style={styles.input}
 								value={this.state.password}
@@ -533,6 +534,7 @@ class ImportFromSeed extends PureComponent {
 								{strings('import_from_seed.confirm_password')}
 							</Animated.Text>
 							<TextInput
+								testID={'input-password-field-confirm'}
 								ref={this.confirmPasswordInput}
 								style={styles.input}
 								value={this.state.confirmPassword}
@@ -558,7 +560,11 @@ class ImportFromSeed extends PureComponent {
 
 						{this.renderSwitch()}
 
-						{!!this.state.error && <Text style={styles.errorMsg}>{this.state.error}</Text>}
+						{!!this.state.error && (
+							<Text style={styles.errorMsg} testID={'invalid-seed-phrase'}>
+								{this.state.error}
+							</Text>
+						)}
 
 						<View style={styles.ctaWrapper}>
 							<StyledButton
