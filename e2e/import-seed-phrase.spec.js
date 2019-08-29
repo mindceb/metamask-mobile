@@ -58,9 +58,28 @@ describe('Import seedphrase flow', () => {
 		await TestHelpers.waitAndTap('onboarding-wizard-back-button');
 		// Check that the onboarding wizard is gone
 		await TestHelpers.checkIfNotVisible('onboarding-wizard-step1-view');
+		// Open Drawer
+		await TestHelpers.tapAtPoint('wallet-screen', { x: 30, y: -5 });
+		// Check that the drawer is visbile
+		await TestHelpers.checkIfVisible('drawer-screen');
+		// Tap on settings
+		await TestHelpers.tap('settings-button');
+		// Check we're in the settings screen
+		// await TestHelpers.checkIfVisible('settings-screen');
+		// // Tap on the "seed words" option
+		// await TestHelpers.tapByText('Seed Words');
+		// // Check we're in the settings screen
+		// await TestHelpers.checkIfVisible('seed-words-screen');
+		// // Check that the seed words for the current account
+		// // matches the ones we use to import the account
+		// await TestHelpers.checkIfHasText('current-seed-words', Correct_Seed_Words);
 	});
 
-	// it('should ', async () => {
+	// it('should switch to ropsten testnet and navigate to faucet to donate and request ETH', async () => {
+	// 	//
+	// });
+
+	// it('should switch to ropsten testnet and navigate to faucet to donate and request ETH', async () => {
 	// 	//
 	// });
 });
